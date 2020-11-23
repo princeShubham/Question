@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Question.Models.Answer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.questionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answer)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.questionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answer)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.answerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.answerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.answerId })
+        </td>
+    </tr>
+}
+
+</table>
